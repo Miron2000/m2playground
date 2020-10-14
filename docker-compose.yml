@@ -1,0 +1,79 @@
+version: "2"
+services:
+  web:
+    container_name: play-web
+    image: nginx:latest
+    volumes:
+      - ./etc/nginx/:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    volumes_from:
+      - php
+    ports:
+      - 80:80
+    working_dir: /var/www/html
+
+  php:
+    container_name: play-php
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+      - ./logs/php-fpm:/var/log/php-fpm
+      - ./composer/cache:/var/www/.composer/cache
+    ports:
+      - 9000:9000
+    environment:
+      MYSQL_USER: magento
+      MYSQL_PASSWORD: magento
+      MYSQL_ROOT_PASSWORD: magento
+      MYSQL_DATABASE: magento
+      MYSQL_HOST: db
+    working_dir: /var/www/html
+    
+  db:
+    container_name: play-db
+    image: mysql:8.0.21
+    volumes:
+      - play-db:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: magento
+      MYSQL_PASSWORD: magento
+      MYSQL_ROOT_PASSWORD: magento
+      MYSQL_DATABASE: magento
+
+  redis-cache:
+    container_name: play-cache
+    image: redis:5.0.9
+
+  redis-session:
+    container_name: play-session
+    image: redis:5.0.9
+
+  elasticsearch:
+    container_name: play-es
+    image: elasticsearch:7.6.2
+    volumes:
+      - play-es:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    environment:
+      http.host: "0.0.0.0"
+      transport.host: "127.0.0.1"
+      bootstrap.memory_lock: "true"
+      ES_JAVA_OPTS: "-Xms2g -Xmx4g"
+      xpack.security.enabled: "false"
+    
+
+  mailhog:
+    container_name: play-mh
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+
+
+volumes: 
+  play-db:
+  play-es:
