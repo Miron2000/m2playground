@@ -67,3 +67,7 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+.composer/*
+devenv/logs/*
+.dccache
+.env
