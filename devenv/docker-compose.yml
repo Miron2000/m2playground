@@ -18,9 +18,9 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./src:/var/www/html
+      - ../:/var/www/html
       - ./logs/php-fpm:/var/log/php-fpm
-      - ./composer/cache:/var/www/.composer/cache
+      - ../.composer/cache:/var/www/.composer/cache
     ports:
       - 9000:9000
     environment:

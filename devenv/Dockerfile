@@ -24,17 +24,13 @@ RUN usermod -s /bin/bash -u 1000 www-data
 
 RUN wget -O /usr/local/bin/composer https://getcomposer.org/download/1.10.15/composer.phar && chmod +x /usr/local/bin/composer
 
-COPY ./bin/init.sh                  /usr/local/bin/init-project
-COPY ./bin/setup.sh                 /usr/local/bin/setup
-COPY ./bin/install-magento.sh       /usr/local/bin/install-magento
 COPY ./bin/config-provision.sh      /usr/local/bin/config-provision
 COPY ./bin/entrypoint.sh            /usr/local/bin/entrypoint
-COPY ./bin/recreate.sh               /usr/local/bin/recreate
 COPY ./bin/db-console.sh            /usr/local/bin/db-console
+COPY ./bin/import-db.sh             /usr/local/bin/import-db
 COPY --chown=www-data:www-data ./etc/composer/auth.json /var/www/.composer/auth.json
-RUN chmod +x /usr/local/bin/init-project /usr/local/bin/setup \
-    /usr/local/bin/install-magento /usr/local/bin/config-provision \
-    /usr/local/bin/entrypoint /usr/local/bin/recreate \
+RUN chmod +x /usr/local/bin/config-provision \
+    /usr/local/bin/entrypoint /usr/local/bin/import-db \
     /usr/local/bin/db-console
 
 RUN echo "entrypoint" >> /root/.bashrc
