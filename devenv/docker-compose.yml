@@ -21,6 +21,7 @@ services:
       - ../:/var/www/html
       - ./logs/php-fpm:/var/log/php-fpm
       - ../.composer/cache:/var/www/.composer/cache
+      - /home/${USER}/project_data/m2playground/mysqldump:/mysqldump
     ports:
       - 9000:9000
     environment:

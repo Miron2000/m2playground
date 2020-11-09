@@ -71,3 +71,5 @@ atlassian*
 devenv/logs/*
 /.dccache
 .env
+/.editorconfig
+/.github/

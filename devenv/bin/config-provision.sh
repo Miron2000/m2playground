@@ -1,4 +1,13 @@
 #!/bin/bash
+su www-data -c "bin/magento config:set web/unsecure/base_url http://localhost/"
+su www-data -c "bin/magento config:set web/secure/base_url http://localhost/"
+su www-data -c "bin/magento config:set web/unsecure/base_static_url  {{unsecure_base_url}}static/"
+su www-data -c "bin/magento config:set web/unsecure/base_media_url   {{unsecure_base_url}}media/"
+su www-data -c "bin/magento config:set web/secure/base_static_url    {{secure_base_url}}static/"
+su www-data -c "bin/magento config:set web/secure/base_media_url     {{secure_base_url}}media/"
 su www-data -c "bin/magento config:set dev/static/sign 0"
 su www-data -c "bin/magento module:disable Magento_TwoFactorAuth"
+su www-data -c "bin/magento config:set web/cookie/cookie_domain ''"
+su www-data -c "bin/magento config:set web/cookie/cookie_path ''"
+su www-data -c "bin/magento config:set web/url/use_store 1"
 su www-data -c "bin/magento c:f"

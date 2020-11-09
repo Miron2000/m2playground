@@ -8,7 +8,7 @@ FROM php:7.4.11-fpm
 RUN apt update && apt install \
     libpng-dev zlib1g-dev libicu-dev libfreetype6-dev \
     libxml2-dev libxslt1-dev libzip-dev libjpeg-dev \
-    wget vim htop unzip mycli -yqq
+    wget vim htop unzip mycli pv -yqq
 
 RUN docker-php-ext-configure gd --with-jpeg --with-freetype \
     && docker-php-ext-configure hash --with-mhash
