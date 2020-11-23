@@ -1,0 +1,64 @@
+<div>
+    <h1 class="newTextIndex">Hello world and Hello Miron</h1>
+    <div>
+        <button class="btn">Hello</button>
+    </div>
+</div>
+
+
+
+
+
+<!--ACCORDION-->
+<h2>ACCORDION</h2>
+<div id="element">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div data-role="content">Content 1</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div data-role="content">Content 2</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div data-role="content">Content 3</div>
+</div>
+
+<!--SWIPER-SLIDER-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/m/b/mb04-black-0.jpg"/></div>
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/m/b/mb01-blue-0.jpg"/></div>
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/m/b/mb05-black-0.jpg"/></div>
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/w/b/wb01-black-0.jpg"/></div>
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/w/b/wb05-red-0.jpg"/></div>
+        <div class="swiper-slide"><img src="http://localhost/media/catalog/product/cache/a97c5cede9e46ae6d85c146ec299d37a/w/b/wb06-red-0.jpg"/></div>
+
+    </div>
+</div>
+
+<!--Подключаем скрипты-->
+<script type="text/x-magento-init">
+{
+    ".btn": {
+        "js/modules/btnHello": { }
+    },
+    "#element": {
+        "js/modules/accordion": { }
+    },
+    "*": {
+        "js/modules/sliderSwiper": { }
+    }
+}
+</script>
+

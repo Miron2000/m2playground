@@ -1,0 +1,13 @@
+& when (@media-common=true){//вывод в style-m.css
+    .img-registration{
+        width:500px;
+        heght:178px;
+    }
+}
+.media-width(@extremum, @break) when (@extremum='max') and (@break=@screen__s){//на меньше екраны (min - от)(max - до @screen__s(640px))
+    .img-registration{
+        width:200px;
+        heght:178px;
+    }
+}
+
