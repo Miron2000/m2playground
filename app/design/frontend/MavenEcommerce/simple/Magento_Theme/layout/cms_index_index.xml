@@ -28,13 +28,13 @@
         <!--        <move element="footer-container" destination="page.wrapper" before="main-content"/>-->
 
         <!--Аргумент БЛОКА-->
-<!--                <referenceContainer name="columns.top">-->
-<!--                    <block name="index_cms_argument_miron" template="Magento_Theme::new_copyright.phtml">-->
-<!--                        <arguments>-->
-<!--                            <argument name="miron" xsi:type="string">HELLO</argument>-->
-<!--                        </arguments>-->
-<!--                    </block>-->
-<!--                </referenceContainer>-->
+        <!--                <referenceContainer name="columns.top">-->
+        <!--                    <block name="index_cms_argument_miron" template="Magento_Theme::new_copyright.phtml">-->
+        <!--                        <arguments>-->
+        <!--                            <argument name="miron" xsi:type="string">HELLO</argument>-->
+        <!--                        </arguments>-->
+        <!--                    </block>-->
+        <!--                </referenceContainer>-->
 
     </body>
 </page>
