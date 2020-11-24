@@ -1,0 +1,23 @@
+<!--
+/**
+ * Copyright © 2020 Studio Raz. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+
+<if args="items">
+    <div class="block-title title">
+        <strong translate="'UI component example'"></strong>
+    </div>
+
+    <div class="block-content content">
+        <ol class="ui-component-example-items" data-bind="foreach: { data: items, as: 'item' }">
+            <li class="ui-component-example-item">
+                <span data-bind="text: item.name"></span>
+                <span> - </span>
+                <span data-bind="text: item.id"></span>
+            </li>
+        </ol>
+        <button data-bind="click: addMessage">Add element</button>
+    </div>
+</if>

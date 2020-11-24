@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2020 Studio Raz. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php
+
+use \Magento\Framework\View\Element\Template;
+
+/**
+ * @var Template $block
+ */
+?>
+
+<div data-bind="scope: 'ui-component-example'" class="crosssell-container">
+    <div data-bind="visible: isVisible()" id="ui_component_example" class="ui-component-example">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+     {
+         "#ui_component_example": {
+             "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout(); ?>
+         }
+     }
+</script>

@@ -4,7 +4,7 @@
         <referenceBlock name="product.info.details">
             <block class="Magento\Catalog\Block\Product\View" name="new.tab" template="product/view/newTab.phtml" group="detailed_info" >
                 <arguments>
-                    <argument translate="true" name="title" xsi:type="string">Product Question</argument>
+                    <argument translate="true" name="title" xsi:type="string">Miron HELLO</argument>
                 </arguments>
             </block>
         </referenceBlock>

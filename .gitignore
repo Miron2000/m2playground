@@ -67,9 +67,11 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+composer/*
 /.composer/*
 devenv/logs/*
 /.dccache
 .env
 /.editorconfig
 /.github/
+package-lock.json
