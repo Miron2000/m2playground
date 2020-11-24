@@ -25,6 +25,7 @@ atlassian*
 /lib/internal/flex/varien/.flexLibProperties
 /lib/internal/flex/varien/.project
 /lib/internal/flex/varien/.settings
+/lib/web/css/docs/docs.css.map
 /node_modules
 /.grunt
 /Gruntfile.js
@@ -70,6 +71,7 @@ atlassian*
 composer/*
 /.composer/*
 devenv/logs/*
+logs/nginx/*
 /.dccache
 .env
 /.editorconfig
