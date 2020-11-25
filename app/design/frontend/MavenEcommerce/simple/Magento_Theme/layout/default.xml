@@ -1,4 +1,5 @@
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="logo">
             <arguments>
@@ -7,5 +8,16 @@
                 <argument name="logo_img_height" xsi:type="number">300</argument>
             </arguments>
         </referenceBlock>
+
+<!--Вывод над хедером текст в зависимости со временем-->
+        <referenceContainer name="header-wrapper">
+            <block name="custom" template="Magento_Theme::customer_hello.phtml" after="logo">
+                <arguments>
+                    <argument name="label1" xsi:type="string">Good Morning</argument>
+                    <argument name="label2" xsi:type="string">Good Afternoon</argument>
+                    <argument name="label3" xsi:type="string">Good Evening</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>

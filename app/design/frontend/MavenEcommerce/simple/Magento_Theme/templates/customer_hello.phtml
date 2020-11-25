@@ -1,0 +1,28 @@
+<?php
+
+use Magento\Framework\View\Element\Template;
+
+/**
+ * @var Template $block
+ */
+?>
+
+<div id="selector">
+
+</div>
+
+<script type="text/x-magento-init">
+ {
+    "#selector":{
+      "Magento_Theme/js/modal": {  "label1": "<?= $label1 = $block->getData('label1') ?>",
+                                   "label2": "<?= $label2 = $block->getData('label2') ?>",
+                                   "label3": "<?= $label3 = $block->getData('label3') ?>"
+                                 }
+    }
+ }
+
+</script>
+
+
+
+
